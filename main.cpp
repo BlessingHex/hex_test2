@@ -1,7 +1,7 @@
 #include <iostream>
 #include <stdio.h>
-//#include "mavsdk.h"
-//#include "SDL.h"
+#include "mavsdk.h"
+#include "SDL.h"
 
 //#if !SDL_VERSION_ATLEAST(2,0,17)
 //#error imgui backend requires sdl 2.0.17+
@@ -12,7 +12,7 @@ const int SCREEN_WIDTH = 640;
 const int SCREEN_HEIGHT = 480;
 
 
-int WinMain() {
+int main() {
     std::cout << "Hello World!" << " Created!" << std::endl;
 
     /*mavsdk::Mavsdk mavsdk;
