@@ -12,25 +12,33 @@ add_executable(test main.cpp)
 include_directories(
     ${CMAKE_SOURCE_DIR}/install/mavsdk/include/mavsdk
     ${CMAKE_SOURCE_DIR}/install/sdlsdk/sdl/include
-    ${CMAKE_SOURCE_DIR}/install/sdlsdk/sdl/lib
 )
 
-# Specify your app's executable name and a list of linked libraries
-target_link_libraries(test
-    # ... any other linked libraries
-    ${CMAKE_SOURCE_DIR}/install/mavsdk/lib/mavsdk.lib
-    ${CMAKE_SOURCE_DIR}/install/sdlsdk/sdl/lib/SDL2d.lib
-    #${CMAKE_SOURCE_DIR}/install/sdlsdk/sdl/SDL2main.lib
-    #kernel32.lib
-    #user32.lib
-    #gdi32.lib
-    #winspool.lib
-    #shell32.lib
-    #ole32.lib
-    #oleaut32.lib
-    #uuid.lib
-    #comdlg32.lib
-    #advapi32.lib
-)
+
+if(WIN32)
+    message("Linking for Windows")
+
+    # Specify your app's executable name and a list of linked libraries
+    target_link_libraries(test
+        # ... any other linked libraries
+        ${CMAKE_SOURCE_DIR}/install/mavsdk/lib/mavsdk.lib
+        ${CMAKE_SOURCE_DIR}/install/sdlsdk/sdl/lib/SDL2d.lib
+    )
+
+endif(WIN32)
+
+if(UNIX)
+    message("Linking for Linux")
+
+    # Specify your app's executable name and a list of linked libraries
+    target_link_libraries(test
+        # ... any other linked libraries
+        ${CMAKE_SOURCE_DIR}/install/mavsdk/lib/libmavsdk.so
+        ${CMAKE_SOURCE_DIR}/install/sdlsdk/sdl/lib/libSDL2d.so
+    )
+
+endif(UNIX)
+
+
 
 message("Done!")
