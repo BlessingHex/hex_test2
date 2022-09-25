@@ -10,12 +10,12 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 set(SOURCE_FILES main.cpp)
 
 # Add executable target with source files listed in SOURCE_FILES variable
-add_executable(test ${SOURCE_FILES})
+add_executable(test WIN32 ${SOURCE_FILES})
 
 # Specify include directories
 include_directories(
-  ${CMAKE_SOURCE_DIR}/install/include
-  ${CMAKE_SOURCE_DIR}/SDL
+  ${CMAKE_SOURCE_DIR}/install/mavsdk/include/mavsdk
+  #${CMAKE_SOURCE_DIR}/install/sdlsdk/sdl
 )
 
 # Platform specific library linking
@@ -25,9 +25,9 @@ if (WIN32)
 
     # Specify your app's executable name and a list of linked libraries
     target_link_libraries(test
-      # ... any other linked libraries
-      ${CMAKE_SOURCE_DIR}/install/lib/mavsdk.lib
-      ${CMAKE_SOURCE_DIR}/SDL/SDL2.lib
+        # ... any other linked libraries
+        ${CMAKE_SOURCE_DIR}/install/mavsdk/lib/mavsdk.lib
+        #${CMAKE_SOURCE_DIR}/install/sdlsdk/sdl/SDL2d.lib
     )
 
 endif(WIN32)
@@ -39,8 +39,8 @@ if (UNIX)
     # Specify your app's executable name and a list of linked libraries
     target_link_libraries(test
         # ... any other linked libraries
-        ${CMAKE_SOURCE_DIR}/install/lib/libmavsdk.so
-	${CMAKE_SOURCE_DIR}/SDL/libSDL2d.so
+        ${CMAKE_SOURCE_DIR}/install/mavsdk/lib/libmavsdk.so
+	    ${CMAKE_SOURCE_DIR}/install/sdlsdk/sdl/libSDL2d.so
     )
 
 endif(UNIX)

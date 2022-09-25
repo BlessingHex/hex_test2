@@ -1,0 +1,11 @@
+prefix=//home/blessing/hex_dependencies/MAVSDK/install
+exec_prefix=//home/blessing/hex_dependencies/MAVSDK/install/bin
+libdir=//home/blessing/hex_dependencies/MAVSDK/install/lib
+includedir=//home/blessing/hex_dependencies/MAVSDK/install/include
+
+Name: MAVSDK
+Description: API and library for MAVLink compatible systems written in C++17
+Version: 1.4.0
+Requires.private: libcurl jsoncpp tinyxml2
+Libs: -L"${libdir}" -lmavsdk
+Cflags: -I"${includedir}" -I"${includedir}/mavsdk"

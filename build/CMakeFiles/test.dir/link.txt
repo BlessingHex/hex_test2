@@ -1,1 +1,0 @@
-/usr/bin/c++ CMakeFiles/test.dir/main.cpp.o -o test  -Wl,-rpath,//home/blessing/hex_development/install/lib://home/blessing/hex_development/SDL ../install/lib/libmavsdk.so ../SDL/libSDL2d.so 
