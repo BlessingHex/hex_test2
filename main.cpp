@@ -17,17 +17,16 @@ int main()
 {
     Log("Hello World!");
 
-    /*
-    mavsdk::Mavsdk mavsdk;
+    //mavsdk::Mavsdk mavsdk;
 
-    mavsdk::ConnectionResult connection_result = mavsdk.add_any_connection("tcp://192.168.1.12:14550");
+    //mavsdk::ConnectionResult connection_result = mavsdk.add_any_connection("tcp://192.168.1.12:14550");
 
-    if (connection_result != mavsdk::ConnectionResult::Success) {
-        Log("Connection failed");
-        //std::cerr << "Connection failed: " << connection_result << '\n';
-        return -1;
-    }
-    */
+    //if (connection_result != mavsdk::ConnectionResult::Success) {
+    //    Log("Connection failed");
+    //    //std::cerr << "Connection failed: " << connection_result << '\n';
+    //    return -1;
+    //}
+    
 
 	
     if (SDL_Init(SDL_INIT_VIDEO) < 0) {
@@ -35,6 +34,11 @@ int main()
         return 1;
     }
 
+    SDL_Window* window = SDL_CreateWindow("SLD test", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, 0);
+    if (!window) {
+        printf("Error: Failed to open window\nSDL Error: '%s'\n", SDL_GetError());
+        return 1;
+    }
 
     SDL_Renderer* renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
     if (!renderer) {
