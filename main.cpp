@@ -1,75 +1,75 @@
 #include <iostream>
 #include <stdio.h>
-//#include "mavsdk.h"
-//#include "SDL.h"
+#include "mavsdk.h"
+#include "SDL.h"
+#undef main
 
-//#if !SDL_VERSION_ATLEAST(2,0,17)
-//#error imgui backend requires sdl 2.0.17+
-//#endif
+#define SCREEN_WIDTH 1280 
+#define SCREEN_HEIGHT 720
 
-//Screen dimension constants
-const int SCREEN_WIDTH = 640;
-const int SCREEN_HEIGHT = 480;
+void Log(const char* message)
+{
+    printf(message);
+}
 
 
-int WinMain() {
-    std::cout << "Hello World!" << " Created!" << std::endl;
+int main()
+{
+    Log("Hello World!");
 
-    /*mavsdk::Mavsdk mavsdk;
+    /*
+    mavsdk::Mavsdk mavsdk;
 
-    mavsdk::ConnectionResult connection_result = mavsdk.add_any_connection("localhost");
+    mavsdk::ConnectionResult connection_result = mavsdk.add_any_connection("tcp://192.168.1.12:14550");
 
     if (connection_result != mavsdk::ConnectionResult::Success) {
-        std::cerr << "Connection failed: " << connection_result << '\n';
+        Log("Connection failed");
+        //std::cerr << "Connection failed: " << connection_result << '\n';
+        return -1;
+    }
+    */
+
+	
+    if (SDL_Init(SDL_INIT_VIDEO) < 0) {
+        printf("Error: SDL failed to initialize\nSDL Error: '%s'\n", SDL_GetError());
         return 1;
-    }*/
+    }
 
-    printf("Hello There!");
+    SDL_Window* window = SDL_CreateWindow("SLD test", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, 0);
+    if (!window) {
+        printf("Error: Failed to open window\nSDL Error: '%s'\n", SDL_GetError());
+        return 1;
+    }
 
-    std::cin.get();
+    SDL_Renderer* renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
+    if (!renderer) {
+        printf("Error: Failed to create renderer\nSDL Error: '%s'\n", SDL_GetError());
+        return 1;
+    }
 
+    bool running = true;
+    while (running) {
+        SDL_Event event;
+        while (SDL_PollEvent(&event)) {
+            switch (event.type) {
+            case SDL_QUIT:
+                running = false;
+                break;
 
- //   //The window we'll be rendering to
-	//SDL_Window* window = NULL;
+            default:
+                break;
+            }
+        }
 
-	////The surface contained by the window
-	//SDL_Surface* screenSurface = NULL;
+        SDL_SetRenderDrawColor(renderer, 0, 255, 255, 255);
+        SDL_RenderClear(renderer);
 
-	////Initialize SDL
-	//if( SDL_Init( SDL_INIT_VIDEO ) < 0 )
-	//{
-	//	printf( "SDL could not initialize! SDL_Error: %s\n", SDL_GetError() );
-	//}
-	//else
-	//{
-	//	//Create window
-	//	window = SDL_CreateWindow( "SDL Tutorial", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN );
-	//	if( window == NULL )
-	//	{
-	//		printf( "Window could not be created! SDL_Error: %s\n", SDL_GetError() );
-	//	}
-	//	else
-	//	{
-	//		//Get window surface
-	//		screenSurface = SDL_GetWindowSurface( window );
+        SDL_RenderPresent(renderer);
+    }
 
-	//		//Fill the surface white
-	//		SDL_FillRect( screenSurface, NULL, SDL_MapRGB( screenSurface->format, 0xFF, 0xFF, 0xFF ) );
+    Log("Hello There!");
 
-	//		//Update the surface
-	//		SDL_UpdateWindowSurface( window );
+    //std::cin.get();
 
- //           //Hack to get window to stay up
- //           SDL_Event e; bool quit = false; while( quit == false ){ while( SDL_PollEvent( &e ) ){ if( e.type == SDL_QUIT ) quit = true; } }
-	//	}
-	//}
-
-	////Destroy window
-	//SDL_DestroyWindow( window );
-
-	////Quit SDL subsystems
-	//SDL_Quit();
-
-    
-    return 0;
+	return 0;
 }

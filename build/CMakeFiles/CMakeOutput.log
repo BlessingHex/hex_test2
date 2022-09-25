@@ -9,7 +9,7 @@ The output was:
 Microsoft (R) Build Engine version 17.2.1+52cd2da31 for .NET Framework
 Copyright (C) Microsoft Corporation. All rights reserved.
 
-Build started 25/09/2022 15:22:35.
+Build started 25/09/2022 20:46:51.
 Project "C:\Users\THEBL\source\repos\hex_test2\build\CMakeFiles\3.23.2\CompilerIdC\CompilerIdC.vcxproj" on node 1 (default targets).
 PrepareForBuild:
   Creating directory "Debug\".
@@ -35,7 +35,7 @@ Build succeeded.
     0 Warning(s)
     0 Error(s)
 
-Time Elapsed 00:00:00.76
+Time Elapsed 00:00:01.01
 
 
 Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.exe"
@@ -54,7 +54,7 @@ The output was:
 Microsoft (R) Build Engine version 17.2.1+52cd2da31 for .NET Framework
 Copyright (C) Microsoft Corporation. All rights reserved.
 
-Build started 25/09/2022 15:22:36.
+Build started 25/09/2022 20:46:53.
 Project "C:\Users\THEBL\source\repos\hex_test2\build\CMakeFiles\3.23.2\CompilerIdCXX\CompilerIdCXX.vcxproj" on node 1 (default targets).
 PrepareForBuild:
   Creating directory "Debug\".
@@ -80,7 +80,7 @@ Build succeeded.
     0 Warning(s)
     0 Error(s)
 
-Time Elapsed 00:00:00.72
+Time Elapsed 00:00:00.71
 
 
 Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.exe"
@@ -92,28 +92,28 @@ The CXX compiler identification is MSVC, found in "C:/Users/THEBL/source/repos/h
 Detecting C compiler ABI info compiled with the following output:
 Change Dir: C:/Users/THEBL/source/repos/hex_test2/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe cmTC_2e5e0.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:m && Microsoft (R) Build Engine version 17.2.1+52cd2da31 for .NET Framework
+Run Build Command(s):C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe cmTC_b62e3.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:m && Microsoft (R) Build Engine version 17.2.1+52cd2da31 for .NET Framework
 Copyright (C) Microsoft Corporation. All rights reserved.
 
   Microsoft (R) C/C++ Optimizing Compiler Version 19.32.31329 for x64
   CMakeCCompilerABI.c
   Copyright (C) Microsoft Corporation.  All rights reserved.
-  cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_2e5e0.dir\Debug\\" /Fd"cmTC_2e5e0.dir\Debug\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\Program Files\cmake-3.23.2-windows-x86_64\share\cmake-3.23\Modules\CMakeCCompilerABI.c"
-  cmTC_2e5e0.vcxproj -> C:\Users\THEBL\source\repos\hex_test2\build\CMakeFiles\CMakeTmp\Debug\cmTC_2e5e0.exe
+  cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_b62e3.dir\Debug\\" /Fd"cmTC_b62e3.dir\Debug\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\Program Files\cmake-3.23.2-windows-x86_64\share\cmake-3.23\Modules\CMakeCCompilerABI.c"
+  cmTC_b62e3.vcxproj -> C:\Users\THEBL\source\repos\hex_test2\build\CMakeFiles\CMakeTmp\Debug\cmTC_b62e3.exe
 
 
 
 Detecting CXX compiler ABI info compiled with the following output:
 Change Dir: C:/Users/THEBL/source/repos/hex_test2/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe cmTC_1a160.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:m && Microsoft (R) Build Engine version 17.2.1+52cd2da31 for .NET Framework
+Run Build Command(s):C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe cmTC_449e9.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:m && Microsoft (R) Build Engine version 17.2.1+52cd2da31 for .NET Framework
 Copyright (C) Microsoft Corporation. All rights reserved.
 
   Microsoft (R) C/C++ Optimizing Compiler Version 19.32.31329 for x64
-  CMakeCXXCompilerABI.cpp
   Copyright (C) Microsoft Corporation.  All rights reserved.
-  cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_1a160.dir\Debug\\" /Fd"cmTC_1a160.dir\Debug\vc143.pdb" /external:W1 /Gd /TP /errorReport:queue "C:\Program Files\cmake-3.23.2-windows-x86_64\share\cmake-3.23\Modules\CMakeCXXCompilerABI.cpp"
-  cmTC_1a160.vcxproj -> C:\Users\THEBL\source\repos\hex_test2\build\CMakeFiles\CMakeTmp\Debug\cmTC_1a160.exe
+  CMakeCXXCompilerABI.cpp
+  cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_449e9.dir\Debug\\" /Fd"cmTC_449e9.dir\Debug\vc143.pdb" /external:W1 /Gd /TP /errorReport:queue "C:\Program Files\cmake-3.23.2-windows-x86_64\share\cmake-3.23\Modules\CMakeCXXCompilerABI.cpp"
+  cmTC_449e9.vcxproj -> C:\Users\THEBL\source\repos\hex_test2\build\CMakeFiles\CMakeTmp\Debug\cmTC_449e9.exe
 
 
 
